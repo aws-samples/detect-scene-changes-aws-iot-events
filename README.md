@@ -1,11 +1,10 @@
-## My Project
+## Repository for AWS IoT blog post "Detect scene changes in remote areas with AWS IoT Core, AWS IoT Events and Amazon SageMaker"
 
-TODO: Fill this README out!
+This repository includes the following resources:
 
-Be sure to:
-
-* Change the title in this README
-* Edit your repository description on GitHub
+1. A sample detector model file (detector_model subfolder) that can be imported in AWS IoT Events in order to create a detector model.
+2. A sample AWS Lambda function to interact with Amazon S3, Amazon SageMaker and Amazon Simple Notification System (lambda subfolder).
+3. A sample SageMaker model (sagemaker_model subfolder) that can be imported in Amazon SageMaker in order to create a model.
 
 ## Security
 

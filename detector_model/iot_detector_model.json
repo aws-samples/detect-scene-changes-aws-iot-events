@@ -1,0 +1,58 @@
+{
+    "detectorModelDefinition": {
+        "states": [
+            {
+                "stateName": "Stopped",
+                "onInput": {
+                    "events": [],
+                    "transitionEvents": [
+                        {
+                            "eventName": "StartTransition",
+                            "condition": "$input.deviceNotifInput.notifType == \"StartItinerary\"",
+                            "actions": [
+                                {
+                                    "iotTopicPublish": {
+                                        "mqttTopic": "deviceOutboundTopic"
+                                    }
+                                }
+                            ],
+                            "nextState": "Area1"
+                        }
+                    ]
+                },
+                "onEnter": {
+                    "events": []
+                },
+                "onExit": {
+                    "events": []
+                }
+            },
+            {
+                "stateName": "Area1",
+                "onInput": {
+                    "events": [],
+                    "transitionEvents": [
+                        {
+                            "eventName": "StopTransition",
+                            "condition": "$input.deviceNotifInput.notifType == \"StopItinerary\"",
+                            "actions": [],
+                            "nextState": "Stopped"
+                        }
+                    ]
+                },
+                "onEnter": {
+                    "events": []
+                },
+                "onExit": {
+                    "events": []
+                }
+            }
+        ],
+        "initialStateName": "Stopped"
+    },
+    "detectorModelDescription": "DeviceModelRole",
+    "detectorModelName": "DeviceModelRole",
+    "evaluationMethod": "BATCH",
+    "key": "deviceID",
+    "roleArn": "#detectorModelRoleArn#"
+}
