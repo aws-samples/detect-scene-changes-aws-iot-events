@@ -8,7 +8,7 @@
                     "transitionEvents": [
                         {
                             "eventName": "StartTransition",
-                            "condition": "$input.deviceNotifInput.notifType == \"StartItinerary\"",
+                            "condition": "$input.deviceNotifInput.notifType == \"StartRoute\"",
                             "actions": [
                                 {
                                     "iotTopicPublish": {
@@ -34,7 +34,7 @@
                     "transitionEvents": [
                         {
                             "eventName": "StopTransition",
-                            "condition": "$input.deviceNotifInput.notifType == \"StopItinerary\"",
+                            "condition": "$input.deviceNotifInput.notifType == \"StopRoute\"",
                             "actions": [],
                             "nextState": "Stopped"
                         }
